@@ -1,0 +1,409 @@
+//atividade 1
+
+
+import java.util.Scanner;
+
+public class CalculoMedia {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+
+        // Entrada dos valores
+        System.out.print("Digite a nota da Prova 1 (P1): ");
+        double P1 = sc.nextDouble();
+
+        System.out.print("Digite a nota da Entrega 1 (E1): ");
+        double E1 = sc.nextDouble();
+
+        System.out.print("Digite a nota da Entrega 2 (E2): ");
+        double E2 = sc.nextDouble();
+
+        System.out.print("Digite a nota das Atividades Extras (X): ");
+        double X = sc.nextDouble();
+
+        System.out.print("Digite a nota da Prova Substitutiva (SUB): ");
+        double SUB = sc.nextDouble();
+
+        System.out.print("Digite a nota do Projeto Integrado (API): ");
+        double API = sc.nextDouble();
+
+        // Cálculo da parte base
+        double base = (P1 * 0.5) + (E1 * 0.2) + (E2 * 0.3) + X + (SUB * 0.15);
+
+        // max(base - 5.9, 0)
+        double maxPart = Math.max(base - 5.9, 0);
+
+        // Fórmula completa
+        double media = (base * 0.5) + ((maxPart / (base - 5.9)) * API * 0.5);
+
+        // Saída
+        System.out.println("A média final é: " + media);
+
+        sc.close();
+    }
+}
+
+
+
+// 2. musica 
+
+//Classe Submarino
+class Submarino {
+ String cor;
+ double tamanho;
+ int capacidade;
+
+ void navegar() {
+     System.out.println("O submarino está navegando pelos mares.");
+ }
+}
+
+//Classe Mar
+class Mar {
+ double profundidade;
+ double temperatura;
+ double salinidade;
+
+ void movimentarOndas() {
+     System.out.println("As ondas do mar estão em movimento.");
+ }
+}
+
+//Classe Tripulante
+class Tripulante {
+ String nome;
+ int idade;
+ String funcao;
+
+ void cantar() {
+     System.out.println(nome + " está cantando dentro do submarino.");
+ }
+}
+
+//Classe principal para testar
+public class Musica {
+ public static void main(String[] args) {
+     Submarino sub = new Submarino();
+     sub.cor = "Amarelo";
+     sub.tamanho = 30.5;
+     sub.capacidade = 10;
+
+     Mar mar = new Mar();
+     mar.profundidade = 200.0;
+     mar.temperatura = 18.5;
+     mar.salinidade = 35.0;
+
+     Tripulante trip = new Tripulante();
+     trip.nome = "John";
+     trip.idade = 28;
+     trip.funcao = "Cantor";
+
+     // Testando os métodos
+     sub.navegar();
+     mar.movimentarOndas();
+     trip.cantar();
+ }
+}
+
+
+
+// a.3 
+
+//------------------- Obra 1 -------------------
+class Monalisa {
+ String expressao;
+ double tamanho;
+ String material;
+
+ void exibir() {
+     System.out.println("Exibindo a Monalisa feita com " + material + ".");
+ }
+}
+
+class Geleia {
+ String sabor;
+ String cor;
+ double viscosidade;
+
+ void espalhar() {
+     System.out.println("Espalhando a geleia de " + sabor + ".");
+ }
+}
+
+class PastaDeAmendoim {
+ String marca;
+ String textura;
+ double quantidade;
+
+ void passar() {
+     System.out.println("Passando pasta de amendoim da marca " + marca + ".");
+ }
+}
+
+//------------------- Obra 2 -------------------
+class Crianca {
+ String nome;
+ int idade;
+ String expressao;
+
+ void sorrir() {
+     System.out.println(nome + " está sorrindo com expressão " + expressao + ".");
+ }
+}
+
+class Acucar {
+ double quantidade;
+ String pureza;
+ String textura;
+
+ void adocar() {
+     System.out.println("O açúcar de textura " + textura + " adoça a imagem.");
+ }
+}
+
+class Retrato {
+ String dimensao;
+ String tecnica;
+ String cor;
+
+ void mostrar() {
+     System.out.println("Mostrando retrato na cor " + cor + " com técnica " + tecnica + ".");
+ }
+}
+
+//------------------- Classe Principal -------------------
+public class VikMuniz {
+ public static void main(String[] args) {
+     // Obra 1
+     Monalisa mona = new Monalisa();
+     mona.expressao = "Serena";
+     mona.tamanho = 50.0;
+     mona.material = "geleia e pasta de amendoim";
+
+     Geleia geleia = new Geleia();
+     geleia.sabor = "morango";
+     geleia.cor = "vermelha";
+     geleia.viscosidade = 0.8;
+
+     PastaDeAmendoim pasta = new PastaDeAmendoim();
+     pasta.marca = "Skippy";
+     pasta.textura = "cremosa";
+     pasta.quantidade = 200.0;
+
+     mona.exibir();
+     geleia.espalhar();
+     pasta.passar();
+
+     // Obra 2
+     Crianca crianca = new Crianca();
+     crianca.nome = "Ana";
+     crianca.idade = 7;
+     crianca.expressao = "alegre";
+
+     Acucar acucar = new Acucar();
+     acucar.quantidade = 300.0;
+     acucar.pureza = "refinado";
+     acucar.textura = "fina";
+
+     Retrato retrato = new Retrato();
+     retrato.dimensao = "50x70cm";
+     retrato.tecnica = "fotografia com açúcar";
+     retrato.cor = "preto e branco";
+
+     crianca.sorrir();
+     acucar.adocar();
+     retrato.mostrar();
+ }
+}
+
+
+
+// at.4 
+
+//------------------- Classe Animal -------------------
+class Animal {
+ String especie;
+ String cor;
+ double tamanho;
+
+ void comer() {
+     System.out.println(especie + " está comendo.");
+ }
+
+ void dormir() {
+     System.out.println(especie + " está dormindo.");
+ }
+
+ void brincar() {
+     System.out.println(especie + " está brincando.");
+ }
+}
+
+//------------------- Classe Planta -------------------
+class Planta {
+ String tipo;
+ double altura;
+ String corFolhas;
+
+ void crescer() {
+     altura += 0.5; // cresce meio metro
+     System.out.println("A planta do tipo " + tipo + " cresceu. Nova altura: " + altura + "m.");
+ }
+
+ void fotossintetizar() {
+     System.out.println("A planta está realizando fotossíntese.");
+ }
+
+ void florescer() {
+     System.out.println("A planta do tipo " + tipo + " começou a florescer.");
+ }
+}
+
+//------------------- Classe ObjetoDecorativo -------------------
+class ObjetoDecorativo {
+ String forma;
+ String cor;
+ String material;
+
+ void enfeitar() {
+     System.out.println("O objeto decorativo em forma de " + forma + " está enfeitando o ambiente.");
+ }
+
+ void mover() {
+     System.out.println("O objeto decorativo foi movido de lugar.");
+ }
+
+ void quebrar() {
+     System.out.println("O objeto decorativo de " + material + " se quebrou!");
+ }
+}
+
+//------------------- Classe Principal -------------------
+public class Doodle {
+ public static void main(String[] args) {
+     // Criando um animal
+     Animal animal = new Animal();
+     animal.especie = "Passarinho";
+     animal.cor = "Azul";
+     animal.tamanho = 0.3;
+
+     animal.comer();
+     animal.dormir();
+     animal.brincar();
+
+     // Criando uma planta
+     Planta planta = new Planta();
+     planta.tipo = "Girassol";
+     planta.altura = 1.2;
+     planta.corFolhas = "Verde";
+
+     planta.crescer();
+     planta.fotossintetizar();
+     planta.florescer();
+
+     // Criando um objeto decorativo
+     ObjetoDecorativo objeto = new ObjetoDecorativo();
+     objeto.forma = "Estrela";
+     objeto.cor = "Dourado";
+     objeto.material = "Metal";
+
+     objeto.enfeitar();
+     objeto.mover();
+     objeto.quebrar();
+ }
+}
+
+
+//at. 5 
+
+//------------------- Classe Carro -------------------
+class Carro {
+ String modelo;
+ double velocidadeMaxima;
+ String cor;
+
+ void acelerar() {
+     System.out.println(modelo + " está acelerando!");
+ }
+
+ void frear() {
+     System.out.println(modelo + " está freando!");
+ }
+
+ void buzinar() {
+     System.out.println(modelo + " está buzinando: BEEP BEEP!");
+ }
+}
+
+//------------------- Classe Piloto -------------------
+class Piloto {
+ String nome;
+ int idade;
+ int experiencia; // anos de experiência
+
+ void dirigir() {
+     System.out.println(nome + " está dirigindo na corrida.");
+ }
+
+ void treinar() {
+     System.out.println(nome + " está treinando para melhorar suas habilidades.");
+ }
+
+ void comemorar() {
+     System.out.println(nome + " está comemorando a vitória!");
+ }
+}
+
+//------------------- Classe Pista -------------------
+class Pista {
+ double comprimento;
+ int curvas;
+ String localizacao;
+
+ void iniciarCorrida() {
+     System.out.println("A corrida começou na pista de " + localizacao + "!");
+ }
+
+ void calcularTempo() {
+     System.out.println("Calculando tempo médio de corrida nesta pista...");
+ }
+
+ void exibirInfo() {
+     System.out.println("Pista localizada em " + localizacao + ", com " + curvas +
+                        " curvas e " + comprimento + " km de extensão.");
+ }
+}
+
+//------------------- Classe Principal -------------------
+public class Corrida {
+ public static void main(String[] args) {
+     // Criando um carro
+     Carro carro = new Carro();
+     carro.modelo = "Ferrari F8";
+     carro.velocidadeMaxima = 340.0;
+     carro.cor = "Vermelho";
+
+     carro.acelerar();
+     carro.frear();
+     carro.buzinar();
+
+     // Criando um piloto
+     Piloto piloto = new Piloto();
+     piloto.nome = "Lewis Hamilton";
+     piloto.idade = 38;
+     piloto.experiencia = 15;
+
+     piloto.dirigir();
+     piloto.treinar();
+     piloto.comemorar();
+
+     // Criando uma pista
+     Pista pista = new Pista();
+     pista.comprimento = 5.8;
+     pista.curvas = 18;
+     pista.localizacao = "Mônaco";
+
+     pista.exibirInfo();
+     pista.iniciarCorrida();
+     pista.calcularTempo();
+ }
+}
